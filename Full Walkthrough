@@ -1,0 +1,33 @@
+#1: Install nano. (sudo apt install nano -y) -y just makes it automatically install for future reference.
+
+#2: edit repository files to line up with Kali distros (use code "sudo nano /etc/apt/sources.list") it will load your chrome distros 
+When you get to this part go to every repo and put a "#" infront of the "deb" so it wont bottleneck reading repo for kali.
+
+#3: after doing so then you need to enter this at the very bottom (deb http://http.kali.org/kali kali-rolliing main contrib non-free)
+write it out by pressing ctrl O enter then ctrl x to exit
+
+#4: Download kali software key. " sudo wget https://archive.kali.org/archive-key.asc -O /etc/apt/trusted.gpg.d/kali-archive-keyring.asc"
+
+#5: update linux by entering "sudo apt update -y" then "sudo apt full-upgrade -y" (will take about 20 mins varying your internet )
+
+#6: Download Required Software. (sudo apt install kali-defaults -y) (sudo apt install kali-desktop-xfce -y) This one will also take about 20 minutes to install. 
+(sudo apt install synaptic -y) (sudo apt install xserver-xephyr -y)
+
+#7: Create a GoX script to run kali live image. (sudo nano /usr/bin/gox) then enter 
+"Xephyr -br -fullscreen -resizeable :20 &
+sleep 5
+sudo -u (your userid) DISPLAY=:20 startxfce4 &> /dev/null"
+  Write out and save by doing ctrl O enter then ctrl x 
+
+#8: make executeable "sudo chmod +x /usr/bin/gox"
+
+#9: Create GoSyn script for synaptic. (sudo nano /usr/bin/gosyn) then enter
+"xhost + &&
+sudo synaptic &&
+xhost -"   Write out and save by doing ctrl O enter then ctrl x
+
+#10: make executeable "sudo chmod +x /usr/bin/gosyn"
+
+#11: Close linux and restart the computer then type "gox" and should load up your desktop. 
+
+And Thats Kali Linux Rolling on Chromebook with no root needed or usb boot from bios. 
