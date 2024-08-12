@@ -3,7 +3,7 @@
 #2: edit repository files to line up with Kali distros (use code "sudo nano /etc/apt/sources.list") it will load your chrome distros 
 When you get to this part go to every repo and put a "#" infront of the "deb" so it wont bottleneck reading repo for kali.
 
-#3: after doing so then you need to enter this at the very bottom (deb http://http.kali.org/kali kali-rolliing main contrib non-free)
+#3: after doing so then you need to enter this at the very bottom (deb http://http.kali.org/kali kali-rolling main contrib non-free)
 write it out by pressing ctrl O enter then ctrl x to exit
 
 #4: Download kali software key. " sudo wget https://archive.kali.org/archive-key.asc -O /etc/apt/trusted.gpg.d/kali-archive-keyring.asc"
